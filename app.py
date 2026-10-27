@@ -9,7 +9,7 @@ from transformers import pipeline
 
 NUM_SENT = 10
 
-@st.cache
+@st.cache_resource
 def get_qa_pipeline() -> Pipeline:
     qa = pipeline("question-answering", model="distilbert/distilbert-base-cased-distilled-squad", revision="564e9b582944a57a3e586bbb98fd6f0a4118db7f")
     return qa
@@ -23,7 +23,7 @@ def answer_question(pipeline: Pipeline, question: str, paragraph: str) -> Dict:
     return pipeline(input)
 
 # %%
-@st.cache
+@st.cache_data
 def get_wiki_paragraph(query: str) -> str:
     results = wikipedia.search(query)
     try:
