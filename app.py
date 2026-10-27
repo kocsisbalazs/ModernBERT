@@ -10,7 +10,7 @@ NUM_SENT = 10
 
 @st.cache
 def get_qa_pipeline() -> Pipeline:
-    qa = pipeline("question-answering")
+    qa = pipeline("question-answering", model="distilbert/distilbert-base-cased-distilled-squad", revision="564e9b582944a57a3e586bbb98fd6f0a4118db7f")
     return qa
 
 
