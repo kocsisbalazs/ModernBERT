@@ -3,6 +3,7 @@ from typing import Dict
 
 import streamlit as st
 import wikipedia
+wikipedia.wikipedia.API_URL = "https://en.wikipedia.org/w/api.php"
 from transformers import Pipeline
 from transformers import pipeline
 
